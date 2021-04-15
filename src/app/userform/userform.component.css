@@ -1,0 +1,16 @@
+table{
+  border:1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td{
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(odd){
+  background-color: #eee;
+}
+tr:hover{
+  background-color: aqua;
+}
