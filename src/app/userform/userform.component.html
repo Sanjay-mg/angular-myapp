@@ -1,5 +1,5 @@
 <h3>{{title}}</h3>
-<input [(ngModel)]='user.firstname'>
+<input [(ngModel)]='user.name'>
 <input [(ngModel)]='user.age' placeholder="Age" type="number">
 <button (click)='save()'>Save</button>
 <table>
@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor='let user of userArray'>
-      <td>{{user.firstname}}</td>
+      <td>{{user.name}}</td>
       <td>{{user.age}}</td>
     </tr>
   </tbody>
