@@ -22,7 +22,7 @@ export class UserformComponent implements OnInit { // controller
     },
     error=> {
       console.log(error);
-      alert(error.statusText)
+      alert("error happened..");
     })
   }
   ngOnInit(): void {
