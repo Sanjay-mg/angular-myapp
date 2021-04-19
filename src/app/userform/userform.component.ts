@@ -17,6 +17,7 @@ export class UserformComponent implements OnInit { // controller
     const observable = this.userService.save(this.user);
     observable.subscribe(response=> { // success function
       console.log(response);
+      this.user.id = response;
       alert('user added..')
       this.userArray.push(Object.assign({}, this.user));
     },
