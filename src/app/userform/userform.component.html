@@ -7,13 +7,19 @@
 <button (click)='save()'>Save</button>
 <table>
   <thead>
-    <th>First Name</th>
+    <th>Name</th>
     <th>Age</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Date of Birth</th>
   </thead>
   <tbody>
     <tr *ngFor='let user of userArray'>
       <td>{{user.name}}</td>
       <td>{{user.age}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phoneNumber}}</td>
+      <td>{{user.dob}}</td>
     </tr>
   </tbody>
 </table>

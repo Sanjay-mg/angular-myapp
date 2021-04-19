@@ -10,22 +10,25 @@ import { UserService } from '../user-service';
 })
 export class UserformComponent implements OnInit { // controller
   title:string = 'userform';
-  user:User=new User(); // model - stores all form data
-  userArray:User[]=[];
+  user:User=new User(); // model - stores all form data, change detection happens in model
+  userArray:any;
   constructor(private userService:UserService) { }
   save(){
-    const promise = this.userService.save(this.user);
-    promise.subscribe(response=> {
+    const observable = this.userService.save(this.user);
+    observable.subscribe(response=> { // success function
       console.log(response);
       alert('user added..')
       this.userArray.push(Object.assign({}, this.user));
     },
-    error=> {
+    error=> { // failure function
       console.log(error);
       alert("error happened..");
     })
   }
   ngOnInit(): void {
+    const observable = this.userService.getAllUsers();
+    observable.subscribe(response => {
+      this.userArray = response});
   }
 
 }
