@@ -8,18 +8,18 @@
 <table>
   <thead>
     <th>Name</th>
-    <th>Age</th>
     <th>Email</th>
     <th>Phone Number</th>
     <th>Date of Birth</th>
+    <th>Delete</th>
   </thead>
   <tbody>
-    <tr *ngFor='let user of userArray'>
+    <tr *ngFor='let user of userArray; index as i'>
       <td>{{user.name}}</td>
-      <td>{{user.age}}</td>
       <td>{{user.email}}</td>
       <td>{{user.phoneNumber}}</td>
       <td>{{user.dob}}</td>
+      <td><button (click)='this.deleteUser(user.id,i)'>Delete</button></td>
     </tr>
   </tbody>
 </table>

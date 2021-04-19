@@ -25,10 +25,13 @@ export class UserformComponent implements OnInit { // controller
       alert("error happened..");
     })
   }
+  deleteUser(userid:number,index:number){
+    const observable = this.userService.delete(userid);
+    observable.subscribe(response => this.userArray.splice(index,1));
+  }
   ngOnInit(): void {
     const observable = this.userService.getAllUsers();
-    observable.subscribe(response => {
-      this.userArray = response});
+    observable.subscribe(response => this.userArray = response);
   }
 
 }
