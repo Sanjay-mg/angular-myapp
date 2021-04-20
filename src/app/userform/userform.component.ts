@@ -30,6 +30,10 @@ export class UserformComponent implements OnInit { // controller
     const observable = this.userService.delete(userid);
     observable.subscribe(response => this.userArray.splice(index,1));
   }
+  searchByName(){
+    // const nameValue:string = document.getElementById('firstname').value ? null:'';
+    // const observable = this.userService.searchByName(nameValue);
+  }
   ngOnInit(): void {
     const observable = this.userService.getAllUsers();
     observable.subscribe(response => this.userArray = response);
